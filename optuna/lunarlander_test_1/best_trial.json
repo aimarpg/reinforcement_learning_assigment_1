@@ -1,0 +1,8 @@
+{
+    "algo_name": "qlearning",
+    "discount_rate": 1.0,
+    "epsilon": 0.4,
+    "learning_rate": 0.08836515675854305,
+    "learning_rate_decay": 0.9400000000000001,
+    "lr_episodes_decay": 1000
+}
