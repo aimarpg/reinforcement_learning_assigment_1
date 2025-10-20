@@ -14,7 +14,6 @@ from deustorl.helpers import DiscretizedObservationWrapper
 
 def make_objective(env, fixed_algo_name):
     def objective(trial):
-
         # Hyperparameter configurations
         lr = trial.suggest_float("learning_rate", 1e-5, 1e-1, log=True)
         lr_decay = trial.suggest_float("learning_rate_decay", 0.9 , 1.0, step=0.01)

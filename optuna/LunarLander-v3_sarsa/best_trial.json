@@ -1,0 +1,8 @@
+{
+    "algo_name": "sarsa",
+    "discount_rate": 0.8,
+    "epsilon": 0.2,
+    "learning_rate": 0.0013053532206445655,
+    "learning_rate_decay": 0.98,
+    "lr_episodes_decay": 1000
+}

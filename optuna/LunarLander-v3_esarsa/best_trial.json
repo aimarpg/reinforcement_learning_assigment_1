@@ -1,0 +1,8 @@
+{
+    "algo_name": "esarsa",
+    "discount_rate": 1.0,
+    "epsilon": 0.1,
+    "learning_rate": 0.0007843593064417946,
+    "learning_rate_decay": 0.93,
+    "lr_episodes_decay": 1000
+}
