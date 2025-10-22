@@ -1,8 +1,38 @@
-{
-    "algo_name": "sarsa",
-    "discount_rate": 0.8,
-    "epsilon": 0.2,
-    "learning_rate": 0.0013053532206445655,
-    "learning_rate_decay": 0.98,
-    "lr_episodes_decay": 1000
-}
+[
+    {
+        "number": 85,
+        "parameters": {
+            "discount_rate": 1.0,
+            "epsilon": 0.0,
+            "learning_rate": 0.060021391952221524,
+            "learning_rate_decay": 0.9500000000000001,
+            "lr_episodes_decay": 50
+        },
+        "rank": 1,
+        "value": -15.86811754167709
+    },
+    {
+        "number": 75,
+        "parameters": {
+            "discount_rate": 1.0,
+            "epsilon": 0.0,
+            "learning_rate": 0.07615652531377419,
+            "learning_rate_decay": 0.9400000000000001,
+            "lr_episodes_decay": 50
+        },
+        "rank": 2,
+        "value": -35.87651897485007
+    },
+    {
+        "number": 61,
+        "parameters": {
+            "discount_rate": 1.0,
+            "epsilon": 0.0,
+            "learning_rate": 0.050190795483531274,
+            "learning_rate_decay": 0.9500000000000001,
+            "lr_episodes_decay": 50
+        },
+        "rank": 3,
+        "value": -39.06408113883975
+    }
+]

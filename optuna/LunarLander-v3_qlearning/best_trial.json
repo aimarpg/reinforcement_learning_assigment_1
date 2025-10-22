@@ -1,8 +1,38 @@
-{
-    "algo_name": "qlearning",
-    "discount_rate": 1.0,
-    "epsilon": 0.25,
-    "learning_rate": 0.019219986351451446,
-    "learning_rate_decay": 0.97,
-    "lr_episodes_decay": 50
-}
+[
+    {
+        "number": 72,
+        "parameters": {
+            "discount_rate": 0.9500000000000001,
+            "epsilon": 0.2,
+            "learning_rate": 0.007506059735746831,
+            "learning_rate_decay": 0.99,
+            "lr_episodes_decay": 100
+        },
+        "rank": 1,
+        "value": -68.77269869096453
+    },
+    {
+        "number": 44,
+        "parameters": {
+            "discount_rate": 0.9500000000000001,
+            "epsilon": 0.30000000000000004,
+            "learning_rate": 0.009056314731822902,
+            "learning_rate_decay": 0.98,
+            "lr_episodes_decay": 100
+        },
+        "rank": 2,
+        "value": -73.8513242881439
+    },
+    {
+        "number": 65,
+        "parameters": {
+            "discount_rate": 0.9500000000000001,
+            "epsilon": 0.25,
+            "learning_rate": 0.007284769913061721,
+            "learning_rate_decay": 0.99,
+            "lr_episodes_decay": 100
+        },
+        "rank": 3,
+        "value": -74.46195495226968
+    }
+]

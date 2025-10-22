@@ -11,6 +11,7 @@ from deustorl.sarsa import Sarsa
 from deustorl.expected_sarsa import ExpectedSarsa
 from deustorl.qlearning import QLearning
 from deustorl.helpers import DiscretizedObservationWrapper
+from optuna.trial import TrialState
 
 def make_objective(env, fixed_algo_name):
     def objective(trial):
@@ -59,7 +60,7 @@ if __name__ == "__main__":
     os.system("mkdir -p ./optuna/")
 
     storage_file = "sqlite:///optuna/optuna.db"
-    n_trials_per_algo = 50
+    n_trials_per_algo = 100
 
     for algo_name in ["sarsa", "esarsa", "qlearning"]:
         study_name = f"{env_name}_{algo_name}"
@@ -78,12 +79,26 @@ if __name__ == "__main__":
         print(f"Searching for the best hyperparameters for {algo_name} in {n_trials_per_algo} trials...")
         study.optimize(make_objective(env, algo_name), n_trials=n_trials_per_algo)
 
-        # Save best params and figures
+        completed_trials = study.get_trials(deepcopy=False, states=(TrialState.COMPLETE,))
+        sorted_trials = sorted(completed_trials, key=lambda t: t.value, reverse=True)[:3]
+        best_trials = []
+
+        for i, trial in enumerate(sorted_trials):
+            trial_info = {
+                "rank": i+1, 
+                "number": trial.number,
+                "value": trial.value, 
+                "parameters": trial.params
+            }
+            best_trials.append(trial_info)
+            with open(f"{full_study_dir_path}/best_trial.json", "w") as f:
+                f.write(json.dumps(trial_info, sort_keys=True, indent=4))
+
         best_trial = study.best_trial
         best_params = dict(best_trial.params)
         best_params["algo_name"] = algo_name
         with open(f"{full_study_dir_path}/best_trial.json", "w") as f:
-            f.write(json.dumps(best_params, sort_keys=True, indent=4))
+            f.write(json.dumps(best_trials, sort_keys=True, indent=4))
 
         fig = optuna.visualization.plot_optimization_history(study)
         fig.write_html(f"{full_study_dir_path}/optimization_history.html")

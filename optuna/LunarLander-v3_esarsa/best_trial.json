@@ -1,8 +1,38 @@
-{
-    "algo_name": "esarsa",
-    "discount_rate": 1.0,
-    "epsilon": 0.1,
-    "learning_rate": 0.0007843593064417946,
-    "learning_rate_decay": 0.93,
-    "lr_episodes_decay": 1000
-}
+[
+    {
+        "number": 78,
+        "parameters": {
+            "discount_rate": 1.0,
+            "epsilon": 0.15000000000000002,
+            "learning_rate": 0.00011437019314969882,
+            "learning_rate_decay": 0.98,
+            "lr_episodes_decay": 100
+        },
+        "rank": 1,
+        "value": -107.36271420519539
+    },
+    {
+        "number": 56,
+        "parameters": {
+            "discount_rate": 0.9,
+            "epsilon": 0.15000000000000002,
+            "learning_rate": 9.86364022409215e-05,
+            "learning_rate_decay": 0.96,
+            "lr_episodes_decay": 100
+        },
+        "rank": 2,
+        "value": -109.24814447932725
+    },
+    {
+        "number": 26,
+        "parameters": {
+            "discount_rate": 0.8,
+            "epsilon": 0.35000000000000003,
+            "learning_rate": 5.071085417109627e-05,
+            "learning_rate_decay": 0.96,
+            "lr_episodes_decay": 500
+        },
+        "rank": 3,
+        "value": -113.03869143755504
+    }
+]
