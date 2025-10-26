@@ -34,6 +34,7 @@ for folder in os.listdir('./optuna/'):
 
     best_trials[algo_name] = algo_best_trials
 
+print(best_trials)
 
 def train_with_hyperparameters(algo_name, hyperparameters):
     # Placeholder for the actual training logic
@@ -62,7 +63,7 @@ def train_with_hyperparameters(algo_name, hyperparameters):
     }
 
     epsilon_greedy_policy = EpsilonGreedyPolicy(epsilon=hyperparameters["epsilon"])
-    algo.learn(epsilon_greedy_policy, n_steps=N_TRAINING_STEPS, **mapped_hyperparameters, tb_epsode_period=1000)
+    algo.learn(epsilon_greedy_policy, n_steps=N_TRAINING_STEPS, **mapped_hyperparameters, tb_episode_period=1000)
 
     avg_reward, avg_steps = evaluate_policy(algo.env, algo.q_table, max_policy, n_episodes=20)
     print(f"Evaluation results for {algo_name} with hyperparameters {hyperparameters}:")
